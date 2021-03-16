@@ -1,9 +1,10 @@
 ## Teamproject
 
-# Dries,
+# Members: Dries, Syed, Ashik, Jose
 
-# Jose,
+# Components: Navbar, Body, Footer
 
-# Syed,
+# API's : https://developers.deezer.com/api
 
-# Ashik
+
+
