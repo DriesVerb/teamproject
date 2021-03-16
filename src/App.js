@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Hello World,we r the musik team</h1>
+      <h1>Hello World,we are the Best Music Page </h1>
     </div>
   );
 }
