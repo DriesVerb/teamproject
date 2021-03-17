@@ -1,6 +1,6 @@
 ## Teamproject
 
-# Members: Dries, Syed, Ashik, Jose
+# Members: Dries, Syed, Ashik, Jose, Mohamed
 
 # Components: Navbar, Body, Footer
 
