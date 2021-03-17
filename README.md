@@ -5,6 +5,3 @@
 # Components: Navbar, Body, Footer
 
 # API : https://developers.deezer.com/api
-
-
-
