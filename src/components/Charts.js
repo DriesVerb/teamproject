@@ -8,22 +8,22 @@ const Charts = (props) => {
     console.log(props.charts);
   }, []);
 
-  // const chartItems = props.charts.tracks.data?.map((tracks, index) => {
-  //   return (
-  //     <div>
-  //       <div>
-  //         <h1>Hello</h1>
-  //         {tracks.name}
-  //       </div>
-  //     </div>
-  //   );
-  // });
-
-  return <div>{props.charts.album.name}</div>;
+  return (
+    <div>
+      {props.charts &&
+        props.charts.map((track, index) => {
+          return (
+            <div key={index}>
+              <div>{track.name}</div>
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
-  charts: state.musicReducer.music1,
+  charts: state.musicReducer.music,
 });
 
 export default connect(mapStateToProps, { fetchMusicCharts })(Charts);

@@ -1,14 +1,12 @@
 const initialState = {
-  music1: {},
-  music2: [],
+  music: [],
 };
 
 const musicReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_CHARTS":
-      console.log(action.payload);
       return {
-        music1: action.payload,
+        music: action.payload,
       };
     default:
       return state;
