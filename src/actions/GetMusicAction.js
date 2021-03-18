@@ -5,7 +5,8 @@
 // http://www.last.fm/api/auth/?api_key=66194b39be6b9ff130d0440126ec6dd8/2.0/?method=chart.gettoptags&api_key=YOUR_API_KEY&format=json
 
 const api =
-  "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=d162d1a6effcfa47a0af59fb02af462d&artist=Cher&album=Believe&format=json";
+  "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=d162d1a6effcfa47a0af59fb02af462d&format=json ";
+// "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=d162d1a6effcfa47a0af59fb02af462d&artist=Cher&album=Believe&format=json";
 
 export const fetchMusicCharts = () => (dispatch) => {
   fetch(api)
