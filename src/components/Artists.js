@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import { fetchMusicCharts } from "../actions/GetMusicAction";
+import { fetchArtist } from "../actions/ArtistAction";
 import { connect } from "react-redux";
 
-const Charts = (props) => {
+const Artists = (props) => {
   useEffect(() => {
-    props.fetchMusicCharts();
-    console.log(props.charts);
+    props.fetchArtist();
+    console.log(props.artist);
   }, []);
 
   return (
     <div>
-      {props.charts &&
-        props.charts.map((track, index) => {
+      {props.artist &&
+        props.artist.map((track, index) => {
           return (
             <div key={index}>
               <div>{track.name}</div>
@@ -23,7 +23,7 @@ const Charts = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  charts: state.musicReducer.music,
+  artist: state.artistReducer.artists,
 });
 
-export default connect(mapStateToProps, { fetchMusicCharts })(Charts);
+export default connect(mapStateToProps, { fetchArtist })(Artists);
