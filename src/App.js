@@ -5,8 +5,7 @@ import store from "./store/Store";
 function App() {
   return (
     <Provider store={store}>
-      <div>
-        <h1>Hello World,we are the Best Music Page </h1>
+      <div className="App">
         <Artists />
       </div>
     </Provider>

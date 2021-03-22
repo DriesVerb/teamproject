@@ -5,16 +5,20 @@ import { connect } from "react-redux";
 const Artists = (props) => {
   useEffect(() => {
     props.fetchArtist();
-    console.log(props.artist);
+    // console.log(props.artist);
   }, []);
 
   return (
-    <div>
+    <div className="artistDiv">
+      <div className="headerDiv">
+        <h2 className="headingArtist">Top Artists </h2>
+      </div>
+
       {props.artist &&
-        props.artist.map((track, index) => {
+        props.artist.map((artist, index) => {
           return (
-            <div key={index}>
-              <div>{track.name}</div>
+            <div key={index} className="artistName">
+              {artist.name}
             </div>
           );
         })}
