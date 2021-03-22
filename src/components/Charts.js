@@ -1,15 +1,30 @@
 import React, { useEffect } from "react";
-import { fetchMusicCharts } from "../actions/GetMusicAction";
+import { fetchMusicCharts, changeCountry } from "../actions/GetMusicAction";
 import { connect } from "react-redux";
 
 const Charts = (props) => {
   useEffect(() => {
-    props.fetchMusicCharts();
+    props.fetchMusicCharts(props.country);
     console.log(props.charts);
   }, []);
 
   return (
     <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.fetchMusicCharts(props.country);
+        }}
+      >
+        <input
+          onChange={(e) => {
+            e.preventDefault();
+            props.changeCountry(e.target.value);
+          }}
+        />
+        <button>Search</button>
+      </form>
+
       {props.charts &&
         props.charts.map((track, index) => {
           return (
@@ -24,6 +39,9 @@ const Charts = (props) => {
 
 const mapStateToProps = (state) => ({
   charts: state.musicReducer.music,
+  country: state.musicReducer.country,
 });
 
-export default connect(mapStateToProps, { fetchMusicCharts })(Charts);
+export default connect(mapStateToProps, { fetchMusicCharts, changeCountry })(
+  Charts
+);
