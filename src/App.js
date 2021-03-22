@@ -8,7 +8,8 @@ import store from "./store/Store";
 // components home
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Charts from "./components/Charts";
+import SearchCountry from "./components/Charts";
+import MainApp from "./carousel/components/MainApp";
 
 // components to routes
 
@@ -16,8 +17,11 @@ function App() {
   return (
     <Provider store={store}>
       <NavBar />
+
       <Route path="/" exact component={Home} />
-      <Route path="/charts" component={Charts} />
+      <Route path="/charts" component={SearchCountry} />
+
+      <MainApp />
     </Provider>
   );
 }

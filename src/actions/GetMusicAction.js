@@ -17,3 +17,16 @@ export const changeCountry = (eventCountry) => (dispatch) => {
     payload: eventCountry,
   });
 };
+
+export const changeVisible = () => (dispatch) => {
+  dispatch({
+    type: "CHANGE_VIS",
+  });
+};
+
+export const changeBandName = (mapBand) => (dispatch) => {
+  dispatch({
+    type: "GET_BANDNAME",
+    payload: mapBand,
+  });
+};
