@@ -1,0 +1,35 @@
+
+$main-color: #272727;
+$light-grey: #747474;
+$orange: #FF652F;
+$yellow: #FFE400;
+$green: #14A76C;
+$cream: #FFE08C;
+$pink: #E0475B;
+
+$font-stack: Fira Sans, sans-serif;
+
+
+
+
+html {
+    box-sizing: border-box;
+    font: 100% $font-stack;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $main-color;
+    color: $cream;
+    font-family: $font-stack; 
+    font-size: 3rem;
+    height: 100vw;
+    width: 100vh;
+    overflow: hidden;
+}

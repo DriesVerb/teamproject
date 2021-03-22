@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import artistReducer from "./ArtistReducer";
+import musicReducer from "./MusicReducer";
+import bandReducer from "./BandReducer";
 
 export default combineReducers({
-  artistReducer,
+  musicReducer,
+  bandReducer,
 });
