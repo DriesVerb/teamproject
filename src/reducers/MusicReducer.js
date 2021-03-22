@@ -1,15 +1,34 @@
 const initialState = {
-  music1: {},
-  music2: [],
+  country: "france",
+  isVisible: false,
+  bandName: " ",
+  music: [],
 };
 
 const musicReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_CHARTS":
-      console.log(action.payload);
       return {
-        music1: action.payload,
+        ...state,
+        music: action.payload,
       };
+    case "GET_COUNTRY":
+      return {
+        ...state,
+        country: action.payload,
+      };
+    case "CHANGE_VIS": {
+      return {
+        ...state,
+        isVisible: true,
+      };
+    }
+    case "GET_BANDNAME": {
+      return {
+        ...state,
+        bandName: action.payload,
+      };
+    }
     default:
       return state;
   }

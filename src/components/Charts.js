@@ -1,29 +1,71 @@
 import React, { useEffect } from "react";
-import { fetchMusicCharts } from "../actions/GetMusicAction";
+import {
+  fetchMusicCharts,
+  changeCountry,
+  changeVisible,
+  changeBandName,
+} from "../actions/GetMusicAction";
 import { connect } from "react-redux";
 
-const Charts = (props) => {
+import BandName from "./BandName";
+
+const SearchCountry = (props) => {
   useEffect(() => {
-    props.fetchMusicCharts();
+    props.fetchMusicCharts(props.country);
     console.log(props.charts);
   }, []);
 
-  // const chartItems = props.charts.tracks.data?.map((tracks, index) => {
-  //   return (
-  //     <div>
-  //       <div>
-  //         <h1>Hello</h1>
-  //         {tracks.name}
-  //       </div>
-  //     </div>
-  //   );
-  // });
+  return (
+    <div>
+      <h3>Search a new country</h3>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.fetchMusicCharts(props.country);
+        }}
+      >
+        <input
+          onChange={(e) => {
+            e.preventDefault();
+            props.changeCountry(e.target.value);
+          }}
+        />
+        <button>Search</button>
+      </form>
 
-  return <div>{props.charts.album.name}</div>;
+      {props.isVisible ? <BandName band={props.bandName} /> : null}
+
+      <h1>These are the top artist from: {props.country}</h1>
+      {props.charts &&
+        props.charts.map((band, index) => {
+          return (
+            <div key={index}>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  props.changeBandName(band.name);
+                  props.changeVisible();
+                }}
+              >
+                {band.name}
+              </div>
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
-  charts: state.musicReducer.music1,
+  charts: state.musicReducer.music,
+  country: state.musicReducer.country,
+  isVisible: state.musicReducer.isVisible,
+  bandName: state.musicReducer.bandName,
 });
 
-export default connect(mapStateToProps, { fetchMusicCharts })(Charts);
+export default connect(mapStateToProps, {
+  fetchMusicCharts,
+  changeCountry,
+  changeVisible,
+  changeBandName,
+})(SearchCountry);

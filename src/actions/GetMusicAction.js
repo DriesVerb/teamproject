@@ -1,41 +1,32 @@
-// const apiKey = "66194b39be6b9ff130d0440126ec6dd8";
-// const apiStart = "http://www.last.fm/api/auth/?api_key=";
-// const apiChart =
-//   "/2.0/?method=chart.gettoptags&api_key=YOUR_API_KEY&format=json";
-// http://www.last.fm/api/auth/?api_key=66194b39be6b9ff130d0440126ec6dd8/2.0/?method=chart.gettoptags&api_key=YOUR_API_KEY&format=json
-
-const api =
-  "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=d162d1a6effcfa47a0af59fb02af462d&artist=Cher&album=Believe&format=json";
-
-export const fetchMusicCharts = () => (dispatch) => {
-  fetch(api)
+export const fetchMusicCharts = (countryUser) => (dispatch) => {
+  fetch(
+    `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${countryUser}&api_key=66194b39be6b9ff130d0440126ec6dd8&format=json`
+  )
     .then((res) => res.json())
     .then((data) => {
       dispatch({
         type: "FETCH_CHARTS",
-        payload: data,
+        payload: data.topartists.artist,
       });
     });
 };
 
-// fetch(`https://api.deezer.com/chart/0`)
-// .then((res) => res.json())
-// .then((data) =>
-//   dispatch({
-//     type: `FETCH_CHARTS`,
-//     payload: data,
-//   })
-// );
+export const changeCountry = (eventCountry) => (dispatch) => {
+  dispatch({
+    type: "GET_COUNTRY",
+    payload: eventCountry,
+  });
+};
 
-// const res = axios.get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
-//   dispatch({
-//     type: `FETCH_CHARTS`,
-//     payload: res.data,
-//   });
+export const changeVisible = () => (dispatch) => {
+  dispatch({
+    type: "CHANGE_VIS",
+  });
+};
 
-// axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`).then((res) =>
-//     dispatch({
-//       type: `FETCH_CHARTS`,
-//       payload: res.data,
-//     })
-//   );
+export const changeBandName = (mapBand) => (dispatch) => {
+  dispatch({
+    type: "GET_BANDNAME",
+    payload: mapBand,
+  });
+};
