@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect} from 'react';
 import {fetchAlbum} from '../actions/AlbumAction';
 import {connect} from 'react-redux';
-/* import albumReducer from '../reducers/AlbumReducer' */
+
 
 const AlbumName = (props) => {
     useEffect(() =>{
