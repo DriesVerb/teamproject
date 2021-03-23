@@ -16,6 +16,9 @@ const NavBar = () => {
         <li>
           <NavLink to="/searchband">Search by Artist</NavLink>
         </li>
+        <li>
+          <NavLink to="/tracks">Top Tracks</NavLink>
+        </li>
       </ul>
     </div>
   );
