@@ -12,7 +12,7 @@ const Slide = styled.div`
   height: 100%;
   width: 100vw;
   flex-shrink: 0;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   transition: 750ms all ease-in-out;
 `;
