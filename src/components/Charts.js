@@ -34,12 +34,16 @@ const SearchCountry = (props) => {
 
       {props.isVisible ? <BandName band={props.bandName} /> : null}
 
-      <h1>These are the top artist from: {props.country}</h1>
+      <h1 style={{ textTransform: "capitalize" }}>
+        {" "}
+        Top artists of {props.country}
+      </h1>
       {props.charts &&
         props.charts.map((band, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="artistDiv">
               <div
+                className="artistList"
                 style={{ cursor: "pointer" }}
                 onClick={() => {
                   props.changeBandName(band.name);
