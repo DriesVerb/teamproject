@@ -1,4 +1,7 @@
 const initialState = {
+  country: "france",
+  isVisible: false,
+  bandName: " ",
   music: [],
   topTracks: [],
 };
@@ -10,11 +13,23 @@ const musicReducer = (state = initialState, action) => {
         ...state,
         music: action.payload,
       };
-    case "FETCH_TOP_TRACKS":
+    case "GET_COUNTRY":
       return {
         ...state,
-        topTracks: action.payload,
-      };  
+        country: action.payload,
+      };
+    case "CHANGE_VIS": {
+      return {
+        ...state,
+        isVisible: true,
+      };
+    }
+    case "GET_BANDNAME": {
+      return {
+        ...state,
+        bandName: action.payload,
+      };
+    }
     default:
       return state;
   }
