@@ -10,6 +10,9 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import SearchCountry from "./components/Charts";
 import MainApp from "./carousel/components/MainApp";
+import AlbumName from "./components/AlbumName"
+
+
 
 // components to routes
 
@@ -17,11 +20,14 @@ function App() {
   return (
     <Provider store={store}>
       <NavBar />
-
+      <AlbumName />
+      
       <Route path="/" exact component={Home} />
       <Route path="/charts" component={SearchCountry} />
+      {/* <Route path="/album" component={AlbumName} />  */}
 
       <MainApp />
+
     </Provider>
   );
 }

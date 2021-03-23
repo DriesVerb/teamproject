@@ -1,15 +1,20 @@
 const initialState = {
+    idAlbum: null,
+    isVisible: false,
     album: []
 };
 
 const albumReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "FETCHT_ALBUMS":
+        case "FETCH_ALBUM":
             return{
+                ...state,
                 album: action.payload
-            };
-
-            default:
-                return state;
+            }
+    
+        default:
+            return state;
     }
-}
+};
+
+export default albumReducer;
