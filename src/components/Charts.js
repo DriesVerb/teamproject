@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import {
   fetchMusicCharts,
   changeCountry,
   changeVisible,
   changeBandName,
-} from "../actions/GetMusicAction";
-import { connect } from "react-redux";
+} from '../actions/GetMusicAction';
+import { connect } from 'react-redux';
 
-import BandName from "./BandName";
+import BandName from './BandName';
 
 const SearchCountry = (props) => {
   useEffect(() => {
@@ -41,7 +41,7 @@ const SearchCountry = (props) => {
           return (
             <div key={index}>
               <div
-                style={{ cursor: "pointer" }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => {
                   props.changeBandName(band.name);
                   props.changeVisible();
