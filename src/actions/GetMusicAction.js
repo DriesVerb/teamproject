@@ -1,12 +1,27 @@
 export const fetchMusicCharts = () => (dispatch) => {
   fetch(
-    "https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=66194b39be6b9ff130d0440126ec6dd8&format=json"
+    'https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=66194b39be6b9ff130d0440126ec6dd8&format=json'
   )
     .then((res) => res.json())
     .then((data) => {
       dispatch({
-        type: "FETCH_CHARTS",
+        type: 'FETCH_CHARTS',
         payload: data.topartists.artist,
+      });
+    });
+};
+
+export const fetchTopTracks = () => (dispatch) => {
+  // fetch(
+  //   `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=66194b39be6b9ff130d0440126ec6dd8&format=json&limit=${count}&page=1`
+  // )
+
+  fetch(`https://theaudiodb.com/api/v1/json/1/track.php?m=2109877`)
+    .then((res) => res.json())
+    .then((data) => {
+      dispatch({
+        type: 'FETCH_TOP_TRACKS',
+        payload: data.tracks.strTrack,
       });
     });
 };

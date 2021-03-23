@@ -10,11 +10,12 @@ const Charts = (props) => {
 
   return (
     <div>
+      <h1> Top Artists </h1>
       {props.charts &&
         props.charts.map((track, index) => {
           return (
             <div key={index}>
-              <div>{track.name}</div>
+              <div>{track.idTrack}</div>
             </div>
           );
         })}
