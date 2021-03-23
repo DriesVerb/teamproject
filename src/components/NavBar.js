@@ -14,7 +14,7 @@ const NavBar = () => {
           <NavLink to="/charts">Search by Country</NavLink>
         </li>
         <li>
-          <NavLink to="/artist">Search by Artist</NavLink>
+          <NavLink to="/searchband">Search by Artist</NavLink>
         </li>
       </ul>
     </div>

@@ -1,5 +1,5 @@
 const initialState = {
-  country: "france",
+  country: "germany",
   isVisible: false,
   bandName: " ",
   music: [],

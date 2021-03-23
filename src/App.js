@@ -9,7 +9,7 @@ import store from "./store/Store";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import SearchCountry from "./components/Charts";
-import MainApp from "./carousel/components/MainApp";
+import SearchByBand from "./components/SearchByBand";
 
 // components to routes
 
@@ -20,8 +20,7 @@ function App() {
 
       <Route path="/" exact component={Home} />
       <Route path="/charts" component={SearchCountry} />
-
-      <MainApp />
+      <Route path="/searchband" component={SearchByBand} />
     </Provider>
   );
 }
