@@ -6,13 +6,12 @@ import {
   changeBandName,
 } from "../actions/GetMusicAction";
 import { connect } from "react-redux";
-
 import BandName from "./BandName";
 
 const SearchCountry = (props) => {
   useEffect(() => {
     props.fetchMusicCharts(props.country);
-    console.log(props.charts);
+ /*    console.log(props.charts); */
   }, []);
 
   return (

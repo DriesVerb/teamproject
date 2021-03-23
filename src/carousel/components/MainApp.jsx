@@ -14,6 +14,7 @@ import image10 from "../imgs/nirvana.jpeg";
 import image11 from "../imgs/thedoors.jpeg";
 import image12 from "../imgs/boris.jpeg";
 import image13 from "../imgs/kylie.jpeg";
+import YouTubeLink from "../../components/YouTubeLink";
 
 const MainApp = () => {
   return (

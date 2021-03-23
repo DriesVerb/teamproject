@@ -9,9 +9,9 @@ const BandName = (props) => {
   }, [props.band]);
   return (
     <Fragment>
-      <h2>Props we passed: {props.band}</h2>
-      <h2>Reducer state: {props.bands.strArtist}</h2>
-      <p>important: {props.bands.strBiographyEN}</p>
+      <h2 className='Band-name-h2'>Props we passed: {props.band}</h2>
+      <h2 className='Bands-name-h2'>Reducer state: {props.bands.strArtist}</h2>
+      <p className='Band-name-p'>important: {props.bands.strBiographyEN}</p>
     </Fragment>
   );
 };
