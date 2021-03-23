@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const BandName = (props) => {
   useEffect(() => {
     props.fetchBand(props.band);
-  }, [props.band]);
+  }, []);
   return (
     <Fragment>
       <h2>Props we passed: {props.band}</h2>

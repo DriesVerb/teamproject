@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { fetchTopTracks } from "../actions/GetMusicAction";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import { fetchTopTracks } from '../actions/GetMusicAction';
+import { connect } from 'react-redux';
 
 const TopTracks = (props) => {
   useEffect(() => {
@@ -8,7 +8,7 @@ const TopTracks = (props) => {
   }, []);
 
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
       <hr />
 
       <h1> Top Tracks </h1>
@@ -17,13 +17,13 @@ const TopTracks = (props) => {
           return (
             <div key={index}>
               <div>
-                <b> Track: </b> {track.strTrack}
+                <b> Song : </b> {track.strTrack}
               </div>
               <div>
-                <b> Artist: </b>
+                <b> By: </b>
                 {track.strArtist}
               </div>
-              <br/>
+              <br />
             </div>
           );
         })}

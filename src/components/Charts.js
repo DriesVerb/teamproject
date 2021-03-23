@@ -12,7 +12,6 @@ import BandName from "./BandName";
 const SearchCountry = (props) => {
   useEffect(() => {
     props.fetchMusicCharts(props.country);
-    console.log(props.charts);
   }, []);
 
   return (
