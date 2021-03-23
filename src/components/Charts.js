@@ -17,9 +17,6 @@ const SearchCountry = (props) => {
 
   return (
     <div>
-<<<<<<< HEAD
-      <h1> Top Artists </h1>
-=======
       <h3>Search a new country</h3>
       <form
         onSubmit={(e) => {
@@ -39,14 +36,10 @@ const SearchCountry = (props) => {
       {props.isVisible ? <BandName band={props.bandName} /> : null}
 
       <h1>These are the top artist from: {props.country}</h1>
->>>>>>> origin/master
       {props.charts &&
         props.charts.map((band, index) => {
           return (
             <div key={index}>
-<<<<<<< HEAD
-              <div>{track.idTrack}</div>
-=======
               <div
                 style={{ cursor: "pointer" }}
                 onClick={() => {
@@ -56,7 +49,6 @@ const SearchCountry = (props) => {
               >
                 {band.name}
               </div>
->>>>>>> origin/master
             </div>
           );
         })}

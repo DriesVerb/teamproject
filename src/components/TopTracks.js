@@ -9,20 +9,26 @@ const TopTracks = (props) => {
 
   return (
     <div>
+      <hr />
 
       <h1> Top Tracks </h1>
-
-
       {props.topTracks &&
         props.topTracks.map((track, index) => {
           return (
             <div key={index}>
               <div>
-                {track.name} - <a href={track.url} target = '_blank' rel='noreferrer' > Play </a>
+                <b> Track: </b> {track.strTrack}
               </div>
+              <div>
+                <b> Artist: </b>
+                {track.strArtist}
+              </div>
+              <br/>
             </div>
           );
         })}
+
+      <hr />
     </div>
   );
 };
@@ -31,4 +37,4 @@ const mapStateToProps = (state) => ({
   topTracks: state.musicReducer.topTracks,
 });
 
-export default connect(mapStateToProps, {fetchTopTracks})(TopTracks);
+export default connect(mapStateToProps, { fetchTopTracks })(TopTracks);

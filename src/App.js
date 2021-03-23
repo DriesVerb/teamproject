@@ -4,37 +4,26 @@ import { Route } from "react-router-dom";
 // redux
 import { Provider } from "react-redux";
 import store from "./store/Store";
-<<<<<<< HEAD
-import Charts from "./components/Charts";
-import TopTracks from "./components/TopTracks";
-=======
 
 // components home
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import SearchCountry from "./components/Charts";
+import TopTracks from './components/TopTracks';
 import MainApp from "./carousel/components/MainApp";
 
 // components to routes
->>>>>>> origin/master
 
 function App() {
   return (
     <Provider store={store}>
-<<<<<<< HEAD
-      <div>
-        <h1>Hello World,we are the Best Music Page </h1>
-        <TopTracks />
-        <Charts />
-      </div>
-=======
       <NavBar />
 
-      <Route path="/" exact component={Home} />
-      <Route path="/charts" component={SearchCountry} />
+      <Route path='/' exact component={Home} />
+      <Route path='/charts' component={SearchCountry} />
+      <Route path='/tracks' component={TopTracks} />
 
       <MainApp />
->>>>>>> origin/master
     </Provider>
   );
 }
