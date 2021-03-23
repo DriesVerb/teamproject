@@ -3,7 +3,6 @@ import { Route } from "react-router-dom";
 
 // redux
 import { Provider } from "react-redux";
-import Artists from "./components/Artists";
 import store from "./store/Store";
 
 // components home
