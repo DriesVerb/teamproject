@@ -8,3 +8,10 @@ export const fetchBand = (inputBand) => (dispatch) => {
       });
     });
 };
+
+export const getBandId = (inputId) => (dispatch) => {
+  dispatch({
+    type: "GET_BAND_ID",
+    payload: inputId,
+  });
+};

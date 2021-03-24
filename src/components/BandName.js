@@ -1,14 +1,22 @@
 import React, { Fragment, useEffect } from "react";
-import { fetchBand } from "../actions/GetBandAction";
+import { fetchBand, getBandId } from "../actions/GetBandAction";
 import { connect } from "react-redux";
+import { Route, NavLink } from "react-router-dom";
+
+import AlbumName from "./AlbumName";
 
 const BandName = (props) => {
   useEffect(() => {
     props.fetchBand(props.band);
-  }, [props.band]);
+  }, []);
+
+  useEffect(() => {
+    props.getBandId(props.bands.idArtist);
+  }, [props.bands]);
+
   return (
     <Fragment>
-      <h1>Top Bands</h1>
+      <h1>Top Bands {props.bandId}</h1>
       <div
         style={{
           width: "100vw",
@@ -79,6 +87,7 @@ const BandName = (props) => {
         >
           Go to Album
         </button>
+        <NavLink to="/album">Album</NavLink>
       </div>
       <div
         style={{
@@ -105,7 +114,8 @@ const BandName = (props) => {
 
 const mapStateToProps = (state) => ({
   bands: state.bandReducer.band,
+  bandId: state.bandReducer.bandId,
   isVisible: state.bandReducer.isVisible,
 });
 
-export default connect(mapStateToProps, { fetchBand })(BandName);
+export default connect(mapStateToProps, { fetchBand, getBandId })(BandName);

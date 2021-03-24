@@ -11,6 +11,11 @@ const bandReducer = (state = initialState, action) => {
         ...state,
         band: action.payload,
       };
+    case "GET_BAND_ID":
+      return {
+        ...state,
+        bandId: action.payload,
+      };
     default:
       return state;
   }
