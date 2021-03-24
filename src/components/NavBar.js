@@ -4,9 +4,12 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div>
-      <h1>Navigation bar</h1>
-      <ul>
+    <nav
+      className="navBar bg-dark col-12 d-flex row justify-content-between"
+      expend="lg"
+    >
+      <h1 className="title">WEMusic</h1>
+      <ul className="navLinks d-flex justify-content-around align-items-center">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -20,7 +23,7 @@ const NavBar = () => {
           <NavLink to="/tracks">Top Tracks</NavLink>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
