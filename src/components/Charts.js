@@ -43,12 +43,8 @@ const SearchCountry = (props) => {
           return (
             <div key={index} className="artistDiv">
               <div
-<<<<<<< HEAD
-                style={{ cursor: 'pointer' }}
-=======
                 className="artistList"
                 style={{ cursor: "pointer" }}
->>>>>>> 0d2242b8e9f6f4a31412bf9d3004c9fa79a15565
                 onClick={() => {
                   props.changeBandName(band.name);
                   props.changeVisible();
