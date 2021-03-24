@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import TopTracks from "./TopTracks";
 
 const AlbumName = (props) => {
-  useEffect(() => {}, []);
-
   useEffect(() => {
     props.fetchAlbum(props.bandId);
   }, [props.bandId]);
