@@ -36,6 +36,12 @@ const SearchCountry = (props) => {
         <button type="submit">Search</button>
       </form>
 
+      {props.error ? (
+        <div>
+          Your searched for "{props.error}". Unfortunately it is not a country!
+        </div>
+      ) : null}
+
       {props.isVisible ? <BandNameCountry /> : null}
 
       <h2>yOU ARE SEARching for {props.country}</h2>
@@ -65,6 +71,7 @@ const SearchCountry = (props) => {
 
 const mapStateToProps = (state) => ({
   search: state.countryReducer.startSearch,
+  error: state.countryReducer.error,
   charts: state.countryReducer.music,
   country: state.countryReducer.country,
   isVisible: state.countryReducer.isVisible,

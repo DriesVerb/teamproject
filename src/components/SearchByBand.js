@@ -30,14 +30,19 @@ const SearchByBand = (props) => {
         <button type="submit">Search</button>
       </form>
 
-      {props.search && props.search ? (
-        <BandNameBand bandInfo={props.bandName} />
+      {props.error ? (
+        <div>
+          Your searched for "{props.error}". Unfortunately this is not a band!
+        </div>
       ) : null}
+
+      {props.search ? <BandNameBand bandInfo={props.bandName} /> : null}
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
+  error: state.searchByBandReducer.error,
   band: state.searchByBandReducer.bandInfo,
   bandName: state.searchByBandReducer.bandName,
   search: state.searchByBandReducer.startSearch,

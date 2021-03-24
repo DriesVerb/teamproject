@@ -4,6 +4,7 @@ const initialState = {
   isVisible: false,
   bandName: " ",
   music: [],
+  error: null,
 };
 
 const countryReducer = (state = initialState, action) => {
@@ -16,8 +17,16 @@ const countryReducer = (state = initialState, action) => {
     case "FETCH_CHARTS":
       return {
         ...state,
+        error: null,
         music: action.payload,
       };
+
+    case "ERROR": {
+      return {
+        ...state,
+        error: action.payload,
+      };
+    }
 
     case "GET_COUNTRY":
       return {

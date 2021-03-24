@@ -2,6 +2,7 @@ const initialState = {
   startSearch: false,
   bandName: "oasis",
   bandInfo: [],
+  error: null,
 };
 
 const searchByBandReducer = (state = initialState, action) => {
@@ -9,7 +10,13 @@ const searchByBandReducer = (state = initialState, action) => {
     case "FETCH_BAND":
       return {
         ...state,
+        error: null,
         bandInfo: action.payload,
+      };
+    case "ERROR":
+      return {
+        ...state,
+        error: action.payload,
       };
     case "GET_BAND_NAME":
       return {

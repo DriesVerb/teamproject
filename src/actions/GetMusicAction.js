@@ -21,6 +21,12 @@ export const fetchMusicCharts = (countryUser) => (dispatch) => {
         type: "FETCH_CHARTS",
         payload: data.topartists.artist,
       });
+    })
+    .catch((error) => {
+      dispatch({
+        type: "ERROR",
+        payload: countryUser,
+      });
     });
 };
 

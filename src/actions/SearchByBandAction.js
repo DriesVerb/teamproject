@@ -20,5 +20,11 @@ export const fetchBand = (queryBand) => (dispatch) => {
         type: "FETCH_BAND",
         payload: data.artists[0],
       });
+    })
+    .catch((error) => {
+      dispatch({
+        type: "ERROR",
+        payload: queryBand,
+      });
     });
 };
