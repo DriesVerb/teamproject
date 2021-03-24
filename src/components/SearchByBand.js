@@ -36,7 +36,7 @@ const SearchByBand = (props) => {
         </div>
       ) : null}
 
-      {props.search ? <BandNameBand bandInfo={props.bandName} /> : null}
+      {props.search ? <BandNameBand /> : null}
     </div>
   );
 };

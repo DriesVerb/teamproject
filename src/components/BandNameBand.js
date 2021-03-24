@@ -7,7 +7,7 @@ const BandNameBand = (props) => {
   useEffect(() => {
     props.fetchBand(props.bandNameBand);
     props.getBandId(props.bands.idArtist);
-  }, [props.bandNameBand, props.bands.idArtist]);
+  }, [props.bands.idArtist]);
 
   return (
     <Fragment>
