@@ -1,23 +1,28 @@
 import React, { Fragment, useEffect } from "react";
-import { fetchAlbum, getAlbumId } from "../actions/AlbumAction";
+import { fetchAlbum, getAlbumId, showTracks } from "../actions/AlbumAction";
 import { connect } from "react-redux";
+import TopTracks from "./TopTracks";
 
 const AlbumName = (props) => {
+  useEffect(() => {}, []);
+
   useEffect(() => {
     props.fetchAlbum(props.bandId);
-  }, []);
+  }, [props.bandId]);
 
   return (
     <Fragment>
-      <div>Hello {props.albumId}</div>
-      <div>this page works {props.bandId}</div>
-
-      {props.album.map((e) => {
+      {props.tracksVis ? <TopTracks /> : null}
+      {<div>{props.albumId}</div>}
+      {props.album.map((e, index) => {
         return (
           <div
             onClick={() => {
               props.getAlbumId(e.idAlbum);
+              props.showTracks();
+              console.log(props.albumId);
             }}
+            key={index}
           >
             <div>{e.strAlbum}</div>
           </div>
@@ -29,8 +34,11 @@ const AlbumName = (props) => {
 
 const mapStateToProps = (state) => ({
   album: state.albumReducer.albumCollection,
+  tracksVis: state.albumReducer.tracksVisible,
   albumId: state.albumReducer.albumId,
   bandId: state.bandReducer.bandId,
 });
 
-export default connect(mapStateToProps, { fetchAlbum, getAlbumId })(AlbumName);
+export default connect(mapStateToProps, { fetchAlbum, getAlbumId, showTracks })(
+  AlbumName
+);

@@ -1,13 +1,18 @@
 const initialState = {
-  country: "germany",
+  startSearch: false,
+  country: "Germany",
   isVisible: false,
   bandName: " ",
   music: [],
-  topTracks: [],
 };
 
-const musicReducer = (state = initialState, action) => {
+const countryReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "START_SEARCH":
+      return {
+        ...state,
+        startSearch: true,
+      };
     case "FETCH_CHARTS":
       return {
         ...state,
@@ -36,4 +41,4 @@ const musicReducer = (state = initialState, action) => {
   }
 };
 
-export default musicReducer;
+export default countryReducer;

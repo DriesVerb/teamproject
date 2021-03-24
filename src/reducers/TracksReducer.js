@@ -1,5 +1,5 @@
 const initialState = {
-  albumId: null,
+  albumId: "",
   topTracks: [],
 };
 
