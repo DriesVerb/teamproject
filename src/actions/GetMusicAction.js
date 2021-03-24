@@ -5,28 +5,11 @@ export const fetchMusicCharts = (countryUser) => (dispatch) => {
     .then((res) => res.json())
     .then((data) => {
       dispatch({
-        type: 'FETCH_CHARTS',
+        type: "FETCH_CHARTS",
         payload: data.topartists.artist,
       });
     });
 };
-
-
-export const fetchTopTracks = () => (dispatch) => {
-  fetch(`https://theaudiodb.com/api/v1/json/1/track.php?m=2109877`)
-    .then((res) => res.json())
-    .then((data) => {
-      dispatch({
-        type: 'FETCH_TRACKS',
-        payload: data.track,
-      });
-    });
-};
-
-
-
-
-
 
 export const changeCountry = (eventCountry) => (dispatch) => {
   dispatch({
