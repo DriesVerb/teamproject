@@ -13,12 +13,11 @@ const NavBar = () => {
         <li>
           <NavLink to="/charts">Search by Country</NavLink>
         </li>
-
         <li>
-          <NavLink to="/tracks">Top Tracks</NavLink>
+          <NavLink to="/searchband">Search Band</NavLink>
         </li>
         <li>
-          <NavLink to="/album">Album</NavLink>
+          <NavLink to="/tracks">Top Tracks</NavLink>
         </li>
       </ul>
     </div>
