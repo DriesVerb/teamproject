@@ -35,11 +35,6 @@ const NavBar = () => {
             Top Bands
           </NavLink>
         </li>
-        <li>
-          <NavLink className="navLink" to="/tracks">
-            Top Tracks
-          </NavLink>
-        </li>
       </ul>
     </nav>
   );

@@ -3,8 +3,6 @@ import { fetchBand, getBandId } from "../actions/GetBandAction";
 import { connect } from "react-redux";
 import { Route, NavLink } from "react-router-dom";
 
-import AlbumName from "./AlbumName";
-
 const BandName = (props) => {
   useEffect(() => {
     props.fetchBand(props.band);
@@ -16,7 +14,7 @@ const BandName = (props) => {
 
   return (
     <Fragment>
-      <h1>Top Bands {props.bandId}</h1>
+      <h1>You choose this band</h1>
       <div
         style={{
           width: "100vw",

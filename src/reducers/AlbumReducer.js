@@ -1,6 +1,7 @@
 const initialState = {
-  albumId: null,
+  albumId: "",
   albumCollection: [],
+  tracksVisible: false,
 };
 
 const albumReducer = (state = initialState, action) => {
@@ -14,6 +15,11 @@ const albumReducer = (state = initialState, action) => {
       return {
         ...state,
         albumId: action.payload,
+      };
+    case "SHOW_TRACKS":
+      return {
+        ...state,
+        tracksVisible: true,
       };
 
     default:

@@ -1,5 +1,5 @@
-export const fetchAlbum = (inputAlbumId) => (dispatch) => {
-  fetch(`https://theaudiodb.com/api/v1/json/1/album.php?i=${inputAlbumId}`)
+export const fetchAlbum = (inputArtistId) => (dispatch) => {
+  fetch(`https://theaudiodb.com/api/v1/json/1/album.php?i=${inputArtistId}`)
     .then((res) => res.json())
     .then((data) => {
       dispatch({
@@ -13,5 +13,11 @@ export const getAlbumId = (inputId) => (dispatch) => {
   dispatch({
     type: "GET_ALBUM_ID",
     payload: inputId,
+  });
+};
+
+export const showTracks = () => (dispatch) => {
+  dispatch({
+    type: "SHOW_TRACKS",
   });
 };
