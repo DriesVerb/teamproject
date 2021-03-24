@@ -8,7 +8,7 @@ import {
 
 import { connect } from "react-redux";
 
-import BandName from "../components/BandName";
+import BandNameBand from "./BandNameBand";
 
 const SearchByBand = (props) => {
   return (
@@ -31,7 +31,7 @@ const SearchByBand = (props) => {
       </form>
 
       {props.search && props.search ? (
-        <BandName bandInfo={props.bandName} />
+        <BandNameBand bandInfo={props.bandName} />
       ) : null}
     </div>
   );

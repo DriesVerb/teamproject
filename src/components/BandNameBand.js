@@ -3,15 +3,14 @@ import { fetchBand, getBandId } from "../actions/GetBandAction";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const BandName = (props) => {
+const BandNameBand = (props) => {
   useEffect(() => {
-    props.fetchBand(props.bandInfo);
+    props.fetchBand(props.bandNameBand);
     props.getBandId(props.bands.idArtist);
-  }, [props.bandName]);
+  }, [props.bandNameBand, props.bands.idArtist]);
 
   return (
     <Fragment>
-      <h1>You choose this band</h1>
       <div
         style={{
           width: "100vw",
@@ -108,9 +107,10 @@ const BandName = (props) => {
 };
 
 const mapStateToProps = (state) => ({
+  bandNameBand: state.searchByBandReducer.bandName,
   bands: state.bandReducer.band,
   bandId: state.bandReducer.bandId,
   isVisible: state.bandReducer.isVisible,
 });
 
-export default connect(mapStateToProps, { fetchBand, getBandId })(BandName);
+export default connect(mapStateToProps, { fetchBand, getBandId })(BandNameBand);
