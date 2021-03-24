@@ -24,6 +24,7 @@ const countryReducer = (state = initialState, action) => {
     case "ERROR": {
       return {
         ...state,
+        isVisible: false,
         error: action.payload,
       };
     }

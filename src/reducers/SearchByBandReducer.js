@@ -15,7 +15,7 @@ const searchByBandReducer = (state = initialState, action) => {
       };
     case "ERROR":
       return {
-        ...state,
+        startSearch: false,
         error: action.payload,
       };
     case "GET_BAND_NAME":
