@@ -29,23 +29,37 @@ const SearchCountry = (props) => {
   };
 
   return (
-    <div>
-      <h3>Search a new country</h3>
-      <form onSubmit={onSubmit}>
-        <input type="text" onChange={getInput} />
-        <button type="submit">Search</button>
-      </form>
+    <div className="country container-fluid col-sm-12 my-3 mb-5 py-4 ">
+      <div className="form my-sm-3 text-center">
+        <form className="formControl text-center " onSubmit={onSubmit}>
+          <input
+            className="search mr-3 "
+            type="text"
+            placeholder="Country Name ..."
+            onChange={getInput}
+          />
+
+          <button className=" btn-sm btn-secondary" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
 
       {props.isVisible ? <BandName bandInfo={props.bandName} /> : null}
 
-      <h2>yOU ARE SEARching for {props.country}</h2>
-      <div>
+      <h2 className="heading text-center text-white my-5">
+        Top Artists of {props.country}
+      </h2>
+      <div className="artistDiv container-fluid ml-3 col-12 d-flex row justify-content-between">
         {props.charts &&
           props.charts.map((band, index) => {
             return (
-              <div key={index} className="artistDiv">
+              <div
+                key={index}
+                className=" container-fluid col-sm-6 col-md-2 my-sm-2 py-sm-2"
+              >
                 <div
-                  className="artistList"
+                  className="artistList  d-flex justify-content-center align-items-center"
                   style={{ cursor: "pointer" }}
                   onClick={(e) => {
                     e.preventDefault();
