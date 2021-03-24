@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 
 const Wrapper = styled.div`
-  height: 50vh;
+  height: 80vh;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
+  opacity: 0.8;
 `;
 
 const Slide = styled.div`

@@ -12,6 +12,7 @@ import SearchCountry from "./components/Charts";
 import SearchByBand from "./components/SearchByBand";
 import TopTracks from "./components/TopTracks";
 import AlbumName from "./components/AlbumName";
+import Footer from "./components/Footer";
 
 // components to routes
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/searchband" component={SearchByBand} />
       <Route path="/tracks" component={TopTracks} />
       <Route path="/album" component={AlbumName} />
+      <Footer />
     </Provider>
   );
 }
