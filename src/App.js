@@ -1,9 +1,9 @@
 // react-router-dom
-import { Route } from "react-router-dom";
+import { Route } from 'react-router-dom';
 
 // redux
-import { Provider } from "react-redux";
-import store from "./store/Store";
+import { Provider } from 'react-redux';
+import store from './store/Store';
 
 // components home
 import Home from "./components/Home";
