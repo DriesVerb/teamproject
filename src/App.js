@@ -1,9 +1,9 @@
 // react-router-dom
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 
 // redux
-import { Provider } from 'react-redux';
-import store from './store/Store';
+import { Provider } from "react-redux";
+import store from "./store/Store";
 
 // components home
 import Home from "./components/Home";
@@ -20,8 +20,8 @@ function App() {
     <Provider store={store}>
       <NavBar />
       <Route path="/" exact component={Home} />
-      <Route path="/searchcountry" component={SearchCountry} />
-      <Route path="/searchband" component={SearchByBand} />
+      <Route path="/countryhits" component={SearchCountry} />
+      <Route path="/topbands" component={SearchByBand} />
       <Route path="/album" component={AlbumName} />
       <Footer />
     </Provider>

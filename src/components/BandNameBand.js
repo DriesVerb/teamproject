@@ -11,6 +11,7 @@ const BandNameBand = (props) => {
 
   return (
     <Fragment>
+<<<<<<< HEAD:src/components/BandNameBand.js
       <div
         style={{
           width: "100vw",
@@ -19,6 +20,9 @@ const BandNameBand = (props) => {
           boxShadow: "2px 5px 5px grey",
         }}
       >
+=======
+      <div className="photoDiv mx-auto">
+>>>>>>> origin/ashik:src/components/BandName.js
         <img
           src={props.bands.strArtistFanart}
           alt="BandPhoto"
@@ -33,41 +37,30 @@ const BandNameBand = (props) => {
       <div
         style={{
           height: "90px",
-          border: "1px solid black",
           textAlign: "start",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          marginTop: "5px",
-          // background: "#33691e ",
+          marginTop: "15px",
         }}
       >
-        <h1
-          style={{
-            marginLeft: "5px",
-
-            letterSpacing: "2px",
-            textShadow: "2px 2px 2px grey",
-          }}
-        >
-          {" "}
-          {props.bands.strArtist}
-        </h1>
+        <h2 className="heading "> {props.bands.strArtist}</h2>
         <p
           style={{
             position: "absolute",
-            marginTop: "5rem",
-            marginLeft: "7px",
+            marginTop: "4.5rem",
+            marginRight: "aut0",
             fontSize: "1.2rem",
             letterSpacing: "1.5px",
             fontWeight: "500",
             textShadow: "2px 2px 3px grey",
+            color: "white",
           }}
         >
           {props.bands.strStyle} / "{props.bands.intFormedYear}"
         </p>
 
-        <button
+        {/* <button
           style={{
             width: "120px",
             height: "30px",
@@ -80,22 +73,26 @@ const BandNameBand = (props) => {
           }}
         >
           Go to Album
-        </button>
-        <NavLink to="/album">Album</NavLink>
+        </button> */}
+        <NavLink className="navLink" to="/album">
+          Album
+        </NavLink>
       </div>
       <div
         style={{
           height: "220px",
           border: "1px solid black",
-          overflow: "scroll",
-          marginTop: "5px",
+          overflowX: "hidden",
+          overflowY: "scroll",
+          marginTop: "1.2rem",
         }}
       >
         <p
           style={{
+            color: "white",
             letterSpacing: "1.5px",
-            lineHeight: "30px",
-            fontSize: "1.1rem",
+            lineHeight: "50px",
+            fontSize: "1.5rem",
             padding: "5px",
           }}
         >

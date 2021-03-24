@@ -21,7 +21,7 @@ const NavBar = () => {
           <NavLink
             activeStyle={{ borderBottom: "2px solid #558b2f  " }}
             className="navLink"
-            to="/searchcountry"
+            to="/countryhits"
           >
             Country Hits
           </NavLink>
@@ -30,7 +30,7 @@ const NavBar = () => {
           <NavLink
             activeStyle={{ borderBottom: "2px solid #558b2f  " }}
             className="navLink"
-            to="/searchband"
+            to="/topbands"
           >
             Top Bands
           </NavLink>
