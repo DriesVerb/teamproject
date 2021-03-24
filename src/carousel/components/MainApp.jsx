@@ -6,7 +6,7 @@ import image2 from "../imgs/christina.jpeg";
 import image3 from "../imgs/greenday.jpeg";
 import image4 from "../imgs/heroes.jpeg";
 import image5 from "../imgs/beyonce.jpeg";
-import image6 from "../imgs/katyperry.jpeg";
+import image6 from "../imgs/katyperry.jpg";
 import image7 from "../imgs/madonna.jpeg";
 import image8 from "../imgs/metallica.jpeg";
 import image9 from "../imgs/dianaross.jpeg";
@@ -14,6 +14,10 @@ import image10 from "../imgs/nirvana.jpeg";
 import image11 from "../imgs/thedoors.jpeg";
 import image12 from "../imgs/boris.jpeg";
 import image13 from "../imgs/kylie.jpeg";
+import image14 from "../imgs/steffani.jpeg";
+import image15 from "../imgs/queen.jpeg";
+import image16 from "../imgs/amy.jpeg";
+import image17 from '../imgs/callas.jpeg'
 
 const MainApp = () => {
   return (
@@ -33,6 +37,10 @@ const MainApp = () => {
           image11,
           image12,
           image13,
+          image14,
+          image15,
+          image16,
+          image17
         ]}
       >
         <h1>Creating a carousel</h1>
