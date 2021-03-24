@@ -3,7 +3,7 @@ import { fetchBand, getBandId } from "../actions/GetBandAction";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const BandName = (props) => {
+const BandNameCountry = (props) => {
   useEffect(() => {
     props.fetchBand(props.bandNameCountry);
     props.getBandId(props.bands.idArtist);
@@ -113,4 +113,6 @@ const mapStateToProps = (state) => ({
   isVisible: state.bandReducer.isVisible,
 });
 
-export default connect(mapStateToProps, { fetchBand, getBandId })(BandName);
+export default connect(mapStateToProps, { fetchBand, getBandId })(
+  BandNameCountry
+);

@@ -8,7 +8,7 @@ import {
 } from "../actions/GetMusicAction";
 import { connect } from "react-redux";
 
-import BandName from "./BandName";
+import BandNameCountry from "./BandNameCountry";
 
 const SearchCountry = (props) => {
   useEffect(() => {
@@ -36,7 +36,7 @@ const SearchCountry = (props) => {
         <button type="submit">Search</button>
       </form>
 
-      {props.isVisible ? <BandName /> : null}
+      {props.isVisible ? <BandNameCountry /> : null}
 
       <h2>yOU ARE SEARching for {props.country}</h2>
       <div>
