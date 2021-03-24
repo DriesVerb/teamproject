@@ -33,7 +33,7 @@ const TopTracks = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  topTracks: state.musicReducer.topTracks,
+  topTracks: state.tracksReducer.topTracks,
   albumId: state.albumReducer.albumId,
 });
 
