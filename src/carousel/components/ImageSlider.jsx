@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import App from "./App.css";
 
 const Wrapper = styled.div`
-  height: 500px;
+  height: 80vh;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `;
 
 const Slide = styled.div`
-  height: 500px;
+  height: 100%;
   width: 100%;
   flex-shrink: 0;
   background-position: center center;

@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #000;
+  background-color: #000 !important;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
@@ -43,6 +43,9 @@ body {
   letter-spacing: 2px;
   font-size: 1.6rem;
 }
+a.navLink {
+  text-decoration: none !important;
+}
 ul {
   text-decoration: none;
   border-bottom: none !important;
@@ -60,7 +63,7 @@ ul {
 }
 .footer {
   width: 100vw;
-  height: 80px;
+  height: 85px;
   background-color: #343a40;
   color: #fff;
   letter-spacing: 2px;
