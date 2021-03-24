@@ -16,7 +16,7 @@ const Slide = styled.div`
   flex-shrink: 0;
   background-position: center center;
   background-size: cover;
-  transition: 750ms all ease-in-out;
+  transition: 750ms all ease-in-out; 
 `;
 
 const ImageSlider = ({
