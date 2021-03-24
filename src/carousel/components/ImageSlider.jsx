@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import App from "./App.css";
 
 const Wrapper = styled.div`
-  height: 50vh;
+  height: 500px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
+  opacity: 0.8;
 `;
 
 const Slide = styled.div`
-  height: 100%;
-  width: 100vw;
+  height: 500px;
+  width: 100%;
   flex-shrink: 0;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   transition: 750ms all ease-in-out;
 `;
