@@ -11,6 +11,10 @@ import { connect } from "react-redux";
 import BandName from "./BandName";
 
 const SearchCountry = (props) => {
+  useEffect(() => {
+    props.fetchMusicCharts(props.country);
+  }, []);
+
   const getInput = (event) => {
     const country = event.target.value;
     props.changeCountry(country);
@@ -32,30 +36,29 @@ const SearchCountry = (props) => {
         <button type="submit">Search</button>
       </form>
 
-      {props.isVisible ? <BandName band={props.bandName} /> : null}
+      {props.isVisible ? <BandName bandInfo={props.bandName} /> : null}
 
-      {props.search ? (
-        <div>
-          {props.charts &&
-            props.charts.map((band, index) => {
-              return (
-                <div key={index} className="artistDiv">
-                  <div
-                    className="artistList"
-                    style={{ cursor: "pointer" }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.changeBandName(band.name);
-                      props.changeVisible();
-                    }}
-                  >
-                    {band.name}
-                  </div>
+      <h2>yOU ARE SEARching for {props.country}</h2>
+      <div>
+        {props.charts &&
+          props.charts.map((band, index) => {
+            return (
+              <div key={index} className="artistDiv">
+                <div
+                  className="artistList"
+                  style={{ cursor: "pointer" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.changeBandName(band.name);
+                    props.changeVisible();
+                  }}
+                >
+                  {band.name}
                 </div>
-              );
-            })}
-        </div>
-      ) : null}
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

@@ -31,10 +31,10 @@ const AlbumName = (props) => {
 };
 
 const mapStateToProps = (state) => ({
+  bandId: state.bandReducer.bandId,
   album: state.albumReducer.albumCollection,
   tracksVis: state.albumReducer.tracksVisible,
   albumId: state.albumReducer.albumId,
-  bandId: state.bandReducer.bandId,
 });
 
 export default connect(mapStateToProps, { fetchAlbum, getAlbumId, showTracks })(

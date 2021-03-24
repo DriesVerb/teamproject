@@ -21,7 +21,7 @@ const NavBar = () => {
           <NavLink
             activeStyle={{ borderBottom: "2px solid #558b2f  " }}
             className="navLink"
-            to="/charts"
+            to="/searchcountry"
           >
             Country Hits
           </NavLink>
