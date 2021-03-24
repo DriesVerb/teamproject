@@ -30,7 +30,9 @@ const SearchByBand = (props) => {
         <button type="submit">Search</button>
       </form>
 
-      {props.search ? <BandName band={props.bandName} /> : null}
+      {props.search && props.search ? (
+        <BandName bandInfo={props.bandName} />
+      ) : null}
     </div>
   );
 };

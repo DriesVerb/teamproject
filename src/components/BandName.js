@@ -1,16 +1,13 @@
 import React, { Fragment, useEffect } from "react";
 import { fetchBand, getBandId } from "../actions/GetBandAction";
 import { connect } from "react-redux";
-import { Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const BandName = (props) => {
   useEffect(() => {
-    props.fetchBand(props.band);
-  }, []);
-
-  useEffect(() => {
+    props.fetchBand(props.bandInfo);
     props.getBandId(props.bands.idArtist);
-  }, [props.bands]);
+  }, [props.bandName]);
 
   return (
     <Fragment>
