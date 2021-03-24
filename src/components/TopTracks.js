@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const TopTracks = (props) => {
   useEffect(() => {
     props.fetchTopTracks(props.albumId);
-  }, [props.albumId]);
+  }, [props.topTracks]);
 
   return (
     <div>
