@@ -36,7 +36,7 @@ const SearchCountry = (props) => {
         <button type="submit">Search</button>
       </form>
 
-      {props.isVisible ? <BandName bandInfo={props.bandName} /> : null}
+      {props.isVisible ? <BandName /> : null}
 
       <h2>yOU ARE SEARching for {props.country}</h2>
       <div>

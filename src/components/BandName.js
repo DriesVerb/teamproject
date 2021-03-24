@@ -5,13 +5,12 @@ import { NavLink } from "react-router-dom";
 
 const BandName = (props) => {
   useEffect(() => {
-    props.fetchBand(props.bandInfo);
+    props.fetchBand(props.bandNameCountry);
     props.getBandId(props.bands.idArtist);
-  }, [props.bandName]);
+  }, [props.bandNameCountry, props.bands.idArtist]);
 
   return (
     <Fragment>
-      <h1>You choose this band</h1>
       <div
         style={{
           width: "100vw",
@@ -108,6 +107,7 @@ const BandName = (props) => {
 };
 
 const mapStateToProps = (state) => ({
+  bandNameCountry: state.countryReducer.bandName,
   bands: state.bandReducer.band,
   bandId: state.bandReducer.bandId,
   isVisible: state.bandReducer.isVisible,
