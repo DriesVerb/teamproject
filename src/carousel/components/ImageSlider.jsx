@@ -5,16 +5,16 @@ const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow-x: hidden; 
 `;
 
 const Slide = styled.div`
   height: 100%;
   width: 100vw;
-  flex-shrink: 0;
-  background-position: center;
-  background-size: cover;
-  transition: 750ms all ease-in-out;
+  flex-shrink: 0; 
+   background-position: center center;
+  background-size: cover; 
+  transition: 750ms all ease-in-out; 
 `;
 
 const ImageSlider = ({
@@ -22,14 +22,12 @@ const ImageSlider = ({
   autoPlay = true,
   autoPlayTime = 3000,
   children,
-  ...props
-}) => {
+  ...props }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const newSlideIndex =
-        currentSlide >= images.length - 1 ? 0 : currentSlide + 1;
+      const newSlideIndex = currentSlide >= images.length - 1 ? 0 : currentSlide + 1;
       setCurrentSlide(newSlideIndex);
     }, autoPlayTime);
 
@@ -42,7 +40,7 @@ const ImageSlider = ({
           key={index}
           style={{
             backgroundImage: `url(${imageUrl})`,
-            marginLeft: index === 0 ? `-${currentSlide * 100}%` : undefined,
+            marginLeft: index === 0 ? `-${currentSlide * 100}%` : undefined
           }}
         ></Slide>
       ))}
