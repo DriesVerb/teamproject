@@ -1,23 +1,39 @@
 import React from "react";
-
+import Logo from "../logo/logo.png";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav
-      className="navBar bg-dark col-12 d-flex row justify-content-between"
-      expend="lg"
+      className="navBar container bg-dark col-12 mx-0 px-0 d-flex row justify-content-around"
+      expend="sm"
     >
-      <h1 className="title">WEMusic</h1>
-      <ul className="navLinks d-flex justify-content-around align-items-center">
+      <h2 className="title my-sm-auto ml-sm-2 px-sm-2  ">
+        <img className="logo" src={Logo} alt="logo" />
+      </h2>
+      <ul className="navItems d-flex mb-sm-2 px-sm-3 justify-content-between align-items-center">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink className="navLink" to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/searchcountry">Search by Country</NavLink>
+          <NavLink
+            activeStyle={{ borderBottom: "2px solid #558b2f  " }}
+            className="navLink"
+            to="/charts"
+          >
+            Country Hits
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/searchband">Search Band</NavLink>
+          <NavLink
+            activeStyle={{ borderBottom: "2px solid #558b2f  " }}
+            className="navLink"
+            to="/searchband"
+          >
+            Top Bands
+          </NavLink>
         </li>
       </ul>
     </nav>
