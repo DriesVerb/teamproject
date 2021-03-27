@@ -9,7 +9,6 @@ const YouTubeLink =props=> {
       console.log(props.videoLinks[0].strMusicVid)
     },[])
    
-    
     return (
         <div>
         <h1>test</h1>

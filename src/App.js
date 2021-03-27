@@ -13,8 +13,14 @@ import Album from "./components/Album";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import SearchCountry from "./components/Charts";
+import TopTracks from './components/TopTracks';
 import MainApp from "./carousel/components/MainApp";
+
 import YouTubeLink from "./components/YouTubeLink";
+
+import AlbumName from "./components/AlbumName"
+
+
 
 
 // components to routes
@@ -26,8 +32,10 @@ function App() {
       <NavBar />
       <YouTubeLink/>
 
-      <Route path="/" exact component={Home} />
-      <Route path="/charts" component={SearchCountry} />
+      <Route path='/' exact component={Home} />
+      <Route path='/charts' component={SearchCountry} />
+      <Route path='/tracks' component={TopTracks} />
+      <Route path="/album" component={AlbumName}/>
 
       <MainApp />
 
@@ -36,3 +44,4 @@ function App() {
 }
 
 export default App;
+ 
